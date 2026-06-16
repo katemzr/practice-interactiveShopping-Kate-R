@@ -1,20 +1,17 @@
-const itemList = document.getElementById("ulItem");
-const addbutton = document.getElementById("addButton")
-const textBox = document.getElementById("textBox")
-
+const itemList = document.getElementById("item-list");
+const addbutton = document.getElementById("add-button")
+const textBox = document.getElementById("text-box")
 
 addbutton.addEventListener('click', () => {
     const addedText = textBox.value;
     const li = document.createElement('li');
     const span = document.createElement('span');
     span.textContent = addedText;
-    
     const removeButton = document.createElement('button');
     removeButton.textContent = 'Remove';
     removeButton.addEventListener('click', () => {
         itemList.removeChild(li)        
     });
-    
     const editButton = document.createElement('button');
     editButton.textContent = "Edit";
     editButton.addEventListener('click', () => {
@@ -32,14 +29,12 @@ addbutton.addEventListener('click', () => {
         }
     });
 
-   
-    li.appendChild(span);
     li.appendChild(removeButton);
     li.appendChild(editButton);
+    li.appendChild(span);
     itemList.appendChild(li);
     textBox.value = '';
 });
-
 
 
 
